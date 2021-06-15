@@ -3,6 +3,9 @@ A simple GUI to draw Chord Diagram from Adjacency Matrix
 
 #  Code by Francesco Martino #
 
+
+![alt text](https://raw.githubusercontent.com/Francesco-Martino/EasyChord/main/sample.png)
+
 # Requirements:
 	-Pandas
 	-PySimpleGUI
