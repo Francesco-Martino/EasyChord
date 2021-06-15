@@ -14,7 +14,7 @@ def chordMaker(file):
     dataset = []
     for i in range(len(df)):
         for name in names:
-            ipt = df.iloc[i]['Colonna1']
+            ipt = df.iloc[i]['Labels']
             otp = name
             if df.iloc[i][name]==1:
                 dataset.append([ipt,otp,1])
@@ -28,8 +28,8 @@ def chordMaker(file):
 settings = [[sg.Text("Select matrix"),sg.FileBrowse()],
             [sg.Text("Title"),sg.Input("Title", key='Title')],
             [sg.Text("Edge width"), sg.Input("2", key='Edge Width')],
-            [sg.Text("Node Size"), sg.Input("15", key='Node Size')]
-            [sg.Text("File Name"), sg.Input("Output", key='File Name')],
+            [sg.Text("Node Size"), sg.Input("15", key='Node Size')],
+            [sg.Text("File Name"), sg.Input("Output", key='File Name')]
            ]
             
 run = [[sg.Button("Generate Chard")]]
