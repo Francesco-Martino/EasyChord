@@ -18,4 +18,8 @@ A simple GUI to draw Chord Diagram from Adjacency Matrix
 - Run from cmd (python maker.py)
 
 # Output:
-The file is saved as 'output.png' in the script directory. Current version doesn't allow to modify the name.
+The file is saved in the script directory.
+
+# Data Format
+
+Data must be an Adjacency Matrix in csv format, separated by ";". First column must be named "Labels" (case-sensitive)
