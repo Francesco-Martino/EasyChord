@@ -10,7 +10,7 @@ hv.output(fig='png', size=500)
 
 def chordMaker(file):
     df = pd.read_csv(file, sep=';')
-    names = df['Colonna1']
+    names = df['Labels']
     dataset = []
     for i in range(len(df)):
         for name in names:
@@ -20,7 +20,7 @@ def chordMaker(file):
                 dataset.append([ipt,otp,1])
     
     
-    namesList = hv.Dataset(pd.DataFrame(list(names), columns=['Nomi']))
+    namesList = hv.Dataset(pd.DataFrame(list(names), columns=['Labels']))
     chord = hv.Chord((dataset,namesList))
     return chord
 
@@ -43,17 +43,18 @@ while True:
     event, values = window.read()
     if event == "Generate Chard":
         print(values['Browse'])
+        print(values['Title'])
         title = values['Title']
         node_size = int(values['Node Size'])
         edge_width = int(values['Edge Width'])
         file_name = values['File Name']
         chord = chordMaker(values['Browse'])
-        chord.opts(node_color="Nomi", 
+        chord.opts(node_color="Labels", 
                    node_cmap="Category20", 
-                   edge_color="Nomi", 
+                   edge_color="Labels", 
                    edge_cmap="Category20", 
                    title=title,
-                   labels='Nomi',
+                   labels="Labels",
                    node_size=node_size,
                    edge_linewidth=edge_width)
         hv.save(chord, file_name+'.png', fmt='png')
