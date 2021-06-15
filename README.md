@@ -1,9 +1,7 @@
 # EasyChord
 A simple GUI to draw Chord Diagram from Adjacency Matrix
 
-########################################
-#  Code by Francesco Martino           #
-########################################
+#  Code by Francesco Martino #
 
 # Requirements:
 	-Pandas
